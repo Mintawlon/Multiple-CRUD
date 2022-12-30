@@ -1,0 +1,649 @@
+For Testing the output
+
+
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 28, 2022 at 10:04 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `laravelcrud`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `brand` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `brand`, `product`, `payment`, `created_at`, `updated_at`) VALUES
+(1, 'Jaskolski,Osaka', 'domain.com', 'MasterCard', '2022-12-25 01:11:25', '2022-12-24 17:30:00'),
+(2, 'Klein-Rice', 'quigley.com', 'American Express', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(4, 'White, Fahey and Romaguera', 'okeefe.com', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(6, 'Ortiz-Kunze', 'mcclure.com', 'American Express', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(7, 'Doyle-Farrell', 'cassin.com', 'MasterCard', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(8, 'Kertzmann LLC', 'huels.com', 'JCB', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(9, 'Auer Inc', 'marvin.com', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(10, 'Boyer-Strosin', 'rath.com', 'MasterCard', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(11, 'Glover Ltd', 'parisian.org', 'MasterCard', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(12, 'Schinner and Sons', 'cole.com', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(13, 'Wyman-Beier', 'walter.com', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(14, 'Graham PLC', 'gutkowski.org', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(15, 'Klocko-Powlowski', 'pagac.biz', 'MasterCard', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(16, 'Gleichner Inc', 'maggio.biz', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(17, 'Olson-Rosenbaum', 'schmidt.com', 'Discover Card', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(18, 'Von, White and Balistreri', 'kutch.com', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(19, 'Terry-Huel', 'becker.biz', 'Visa', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(20, 'O\'Connell-Kub', 'nolan.com', 'MasterCard', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(21, 'local candy', 'sweet product', '2C2P', '2022-12-24 17:30:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `drugs`
+--
+
+CREATE TABLE `drugs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `item` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stock` int(11) NOT NULL,
+  `notic` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `drugs`
+--
+
+INSERT INTO `drugs` (`id`, `item`, `stock`, `notic`, `created_at`, `updated_at`) VALUES
+(1, 'Willow Mashellow', 285, 'Tempora voluptatem vitae quia et non aut. Ab dicta et accusantium.', '2022-11-03 09:23:21', '2022-12-23 17:30:00'),
+(4, 'Rosendo Krajcik', 194, 'Ipsam dolores commodi odit. Et unde repellendus voluptate rerum quod consequatur eos. Aut dolorem sed excepturi ullam. Qui et accusamus dolores numquam rerum quibusdam aliquam. Vero illo eum eum sunt adipisci voluptas.', '2022-12-16 06:21:44', '2022-12-23 03:18:57'),
+(5, 'Reilly Hartmann DDS', 352, 'Vero at tempore et aut qui. Quasi aut id error magnam hic quos.', '2022-06-04 05:50:05', '2022-12-23 03:18:57'),
+(6, 'Mr. Davonte Cole', 131, 'Quia dolore in quia. Nisi voluptatem ipsam vel sit distinctio porro eos. Molestiae veritatis ad velit.', '2022-01-13 23:39:44', '2022-12-23 03:18:57'),
+(7, 'Mrs. Juanita Gislason MD', 137, 'Repellendus officia minus officia soluta est recusandae. Esse aut nesciunt nam assumenda. Quam laudantium officia aspernatur voluptatem dicta. Consequatur earum porro ipsam ducimus sunt aperiam.', '2022-11-02 00:13:40', '2022-12-23 03:18:57'),
+(8, 'Antoinette Willms', 314, 'Blanditiis beatae aliquid illum non et magnam. Perspiciatis eius adipisci quae dolor at dolorum. Delectus suscipit ad id cum.', '2022-06-08 06:31:36', '2022-12-23 03:18:57'),
+(9, 'Dr. Ludie Breitenberg Jr.', 684, 'Placeat totam autem quam. Non laudantium alias fugiat animi nostrum magni molestias quo. Consequatur consequatur sunt numquam dolorum eos. Aspernatur rerum id illo eum natus voluptatem. Qui voluptatem reiciendis et et explicabo reiciendis dicta.', '2022-01-28 02:51:43', '2022-12-23 03:18:57'),
+(10, 'Elmer Zieme', 119, 'Rem eum a quibusdam magni et asperiores neque. Esse ea voluptatem eius quaerat. Vel rerum deserunt ab aspernatur error alias. Rerum dolorem consequatur enim.', '2022-03-07 04:46:30', '2022-12-23 03:18:57'),
+(11, 'Gwendolyn Paucek', 81, 'Blanditiis officiis quam quis odit magni voluptatum magni in. Praesentium tenetur ad consequatur blanditiis suscipit. Odit deleniti explicabo sed natus labore reiciendis et odio.', '2022-08-21 13:50:26', '2022-12-23 03:18:57'),
+(12, 'Prof. Ned Waelchi', 869, 'Suscipit et omnis sunt ex rerum et ipsam. Qui similique assumenda fugit at culpa amet sit. Non quam esse cumque maxime. Et temporibus explicabo ad natus dicta rerum non eius. Quae voluptatum tempora debitis et voluptates.', '2022-10-23 04:41:24', '2022-12-23 03:18:57'),
+(13, 'Erica Will', 536, 'Quod possimus expedita impedit. Cumque aut fugit soluta nostrum ut veniam maxime cupiditate. Nulla illo nobis odio nam totam. Mollitia id qui quasi quae placeat hic.', '2022-05-27 03:35:18', '2022-12-23 03:18:57'),
+(14, 'Zackary Zemlak PhD', 552, 'Suscipit temporibus optio et dolorem incidunt similique. Doloribus consequuntur sint expedita. Modi quia quae odit animi quis. Qui repellat ut in eius. Sed et sit dolor temporibus ipsum molestiae.', '2022-03-09 14:22:37', '2022-12-23 03:18:57'),
+(15, 'Rhiannon Gulgowski', 815, 'Laudantium modi illo aperiam repellendus. Voluptates fugiat nam unde sed. Quo consequuntur occaecati non consequatur.', '2022-01-20 13:01:01', '2022-12-23 03:18:57'),
+(16, 'Bernhard Bosco', 715, 'Perferendis perferendis voluptatem placeat dolores cumque. Corporis enim consequuntur quia optio ut ullam deleniti. Eligendi quia omnis assumenda nobis soluta qui hic.', '2022-08-30 14:29:16', '2022-12-23 03:18:57'),
+(17, 'Elda Dach', 464, 'Exercitationem dicta cumque a dolores. Numquam illum id vitae eaque quo sunt qui. Necessitatibus maxime assumenda repudiandae neque vel quia qui.', '2022-06-23 10:37:23', '2022-12-23 03:18:57'),
+(18, 'Maggie Hand', 551, 'Dolorum deleniti quo rerum sit qui qui. Sunt eius qui sapiente officiis vero veniam sit. Asperiores dignissimos ut fugiat.', '2022-04-10 05:23:08', '2022-12-23 03:18:57'),
+(19, 'Mr. Cletus Bahringer', 84, 'Quos id cumque aliquam consequatur nihil voluptatem facere. Laudantium asperiores aut amet non quas facere. Nulla reiciendis aliquam excepturi. Nisi sit harum temporibus et voluptas id perferendis.', '2022-07-02 23:23:07', '2022-12-23 03:18:57'),
+(20, 'Dr. Rachel Mitchell', 973, 'Enim eos iure aperiam voluptas et vero. Impedit enim dolor animi. Occaecati optio assumenda in natus doloremque. Qui id eos quidem provident. Dignissimos dolorem reiciendis sit voluptate repudiandae excepturi non.', '2022-09-01 21:29:48', '2022-12-23 03:18:57'),
+(21, 'name', 3455, 'fdsfsdfsda', NULL, NULL),
+(22, 'name', 3455, 'fdsfsdfsda', '2022-12-23 17:30:00', NULL),
+(23, 'Alchol', 100, 'Keep in cool and dry place and', '2022-12-23 17:30:00', NULL),
+(24, 'Alchol', 100, 'Keep in cool and dry place and', '2022-12-23 17:30:00', NULL),
+(25, 'Alchol', 100, 'Keep in cool and dry place and', '2022-12-23 17:30:00', NULL),
+(26, 'paracetamol', 90, 'Used for common cold', '2022-12-23 17:30:00', NULL),
+(27, 'Mrs. Kaylee Blanda MD', 109, 'Eum quas ut est adipisci. Alias libero consequatur numquam molestiae. Repudiandae quis deserunt est sint.', '2022-08-23 15:44:51', '2022-12-24 08:08:23'),
+(28, 'Prof. Alexa Wilderman', 330, 'Atque autem voluptatibus natus quis. Fugiat facilis reiciendis eaque delectus. Quo enim perspiciatis ipsam doloremque consequatur itaque. Ipsam asperiores doloribus fugiat recusandae.', '2022-09-13 23:35:45', '2022-12-24 08:08:23'),
+(29, 'Derrick Cruickshank', 301, 'Aspernatur nostrum iusto enim ea. Aut qui quisquam facilis omnis modi corporis. Neque ullam odit natus labore maxime accusamus aut.', '2022-07-09 14:53:11', '2022-12-24 08:08:23'),
+(30, 'Eliseo Roberts', 524, 'Blanditiis ea quos libero maxime minima ea atque. Nihil et eligendi laudantium nisi. Facilis unde laboriosam expedita atque quia et natus sunt. Corporis nulla aliquid ut velit nulla non.', '2022-08-24 06:21:47', '2022-12-24 08:08:23'),
+(31, 'Oran Cassin', 804, 'Totam recusandae quo repellat quas laborum. Eveniet voluptas ipsum ea ipsum odit. Cumque expedita itaque nobis cum enim accusantium cumque. Natus eum excepturi reprehenderit ut accusantium dolores.', '2022-11-23 09:24:20', '2022-12-24 08:08:23'),
+(32, 'Ms. Maud Sipes II', 475, 'Enim atque ea et et neque quidem facilis. Dolorem dolorum dolorem illum voluptatem officia qui veritatis. Numquam qui accusamus in libero omnis quam sunt.', '2022-02-15 09:30:08', '2022-12-24 08:08:23'),
+(33, 'Jimmie O\'Conner', 469, 'Doloribus cum aliquam alias deserunt. Facilis animi optio iusto sapiente rerum. Dicta consequatur ducimus suscipit beatae. Blanditiis amet nihil voluptatem impedit.', '2022-02-15 02:17:15', '2022-12-24 08:08:23'),
+(34, 'Marisol Senger', 550, 'Eius error esse quod blanditiis explicabo. Earum ab labore voluptas ut. Sit quis est nulla.', '2022-02-12 08:40:06', '2022-12-24 08:08:23'),
+(35, 'Mrs. Burdette Koss IV', 440, 'Nihil maiores consectetur velit ut repellat odit repudiandae. Eveniet iusto quis earum aut. Aut sit officia dolorum quasi. Sed omnis quis ducimus repudiandae.', '2022-03-06 23:39:41', '2022-12-24 08:08:23'),
+(36, 'Jalyn Kunde', 144, 'Quibusdam quis sit excepturi quia autem ut quas. Sit provident pariatur deleniti beatae dolorem nam totam et. Libero porro temporibus repellat voluptate alias saepe necessitatibus accusamus. Et consectetur sit quia consequatur quam qui.', '2022-06-15 12:59:32', '2022-12-24 08:08:23'),
+(37, 'Jovani Gaylord', 895, 'Quidem perferendis et minus et voluptatibus expedita a. Ducimus libero inventore molestias eos atque accusantium est. Et id ut velit et. Sit sint consequatur eos in.', '2022-08-23 15:21:49', '2022-12-24 08:08:23'),
+(38, 'Ruben Bergstrom', 297, 'Et et necessitatibus expedita maiores. Assumenda voluptas occaecati eum id. Voluptatum eius sit eius reiciendis aut reiciendis esse. Molestias perspiciatis qui nobis vel.', '2022-08-28 21:09:11', '2022-12-24 08:08:23'),
+(39, 'Carole Kuhlman', 522, 'Ducimus officia voluptas harum enim. Omnis quisquam dolorem facere qui ad. Sint reprehenderit odio occaecati. Commodi minus quam nihil harum eveniet in ea quia. Et nam esse dicta quibusdam hic dolor et.', '2022-10-24 00:16:22', '2022-12-24 08:08:23'),
+(40, 'Jules Hyatt', 909, 'Quo perspiciatis reiciendis non est facere iure eveniet. Molestias amet quibusdam aut praesentium. Aliquid reprehenderit iusto ut ipsam. Excepturi non est ut.', '2022-04-19 13:40:59', '2022-12-24 08:08:23'),
+(41, 'Mr. Harmon Baumbach', 983, 'Doloremque distinctio non ut facere totam quibusdam. Dolorem earum totam iusto et assumenda officiis quia. Dolore minima est voluptates. Perferendis aliquam ab autem suscipit quae fugiat. Nesciunt delectus aperiam molestiae voluptatibus ipsa.', '2022-01-30 07:13:49', '2022-12-24 08:08:23'),
+(42, 'Kurt Bahringer', 888, 'Dolorem dolor et nobis molestias. Soluta aut velit et aspernatur sunt quaerat asperiores ea. Omnis recusandae ad ipsa et. Velit modi quia exercitationem id.', '2022-11-25 23:30:18', '2022-12-24 08:08:23'),
+(43, 'Chaz Smitham II', 97, 'Expedita repellendus doloremque id cum. Et quo voluptas ducimus at eos id sit. Voluptate quo tenetur quia ab earum commodi atque. Voluptates neque a natus quia autem ea.', '2022-05-08 10:13:06', '2022-12-24 08:08:23'),
+(44, 'Mario Johns', 928, 'Sit eveniet rerum reprehenderit voluptas molestiae. Eveniet aut est enim ea. Quisquam enim quae aliquid temporibus facilis voluptatem dolores.', '2022-08-13 08:47:08', '2022-12-24 08:08:23'),
+(45, 'Gillian McClure', 328, 'Et in officiis culpa similique. Sit ut quia voluptates et ut. Neque consequatur quo et ut et.', '2022-08-24 16:44:49', '2022-12-24 08:08:23'),
+(46, 'Santiago Vandervort', 158, 'Est eligendi mollitia omnis officia dolor. Qui magnam similique tempora maxime. Autem sit at dolorum veritatis alias aut odit.', '2022-05-27 09:47:01', '2022-12-24 08:08:23'),
+(47, 'Gillian Hills I', 548, 'Sit culpa quia ea aliquid occaecati quia soluta. Maiores qui at voluptatum maxime sed. Excepturi quidem excepturi aliquam perspiciatis ut omnis eligendi. Iste optio hic quam rem culpa quis molestiae.', '2022-10-04 13:13:43', '2022-12-24 08:09:03'),
+(48, 'Dr. Terrance Kertzmann III', 744, 'Numquam qui necessitatibus sed facilis recusandae adipisci molestiae. Nihil aut tempore dolores illo. Illum rerum id omnis facere aliquid.', '2022-09-28 16:02:13', '2022-12-24 08:09:03'),
+(49, 'Roslyn Herman IV', 2, 'Ut qui officiis in voluptatem. Porro et ut voluptatibus eius voluptatem. Ad nulla porro fugit dolor quas. Et qui facere aut voluptate ea velit.', '2022-11-11 12:36:39', '2022-12-24 08:09:03'),
+(50, 'Prof. Kristofer Parker IV', 45, 'Et qui esse non atque nihil laborum voluptatibus. Quia occaecati veniam illo voluptas blanditiis. Ut inventore repellat eaque voluptatem et. Nihil fugiat id quasi neque sint ipsum.', '2022-11-22 12:04:12', '2022-12-24 08:09:03'),
+(51, 'Dr. Liliana Streich I', 313, 'Laborum omnis odit voluptatibus odio maiores voluptatum. Qui non aut id perspiciatis molestiae. Molestiae sed dolor voluptatum accusantium quos tempore deserunt. Voluptatem sunt dicta ipsa natus voluptatem optio.', '2022-03-26 08:34:20', '2022-12-24 08:09:03'),
+(52, 'Dr. Timmothy Gislason MD', 855, 'Est aut quia non. Ut ab dignissimos cum aut. Vel illo eveniet sit quas amet libero quos. Itaque eius corporis deserunt ut qui sed.', '2022-09-16 05:45:13', '2022-12-24 08:09:03'),
+(53, 'Dr. Amos Weissnat DDS', 960, 'Dolor voluptas occaecati eos autem beatae nisi sint. Itaque laborum at consequatur ex saepe excepturi tempora. Et dolorum qui consequatur pariatur. Ut quis quod dolores.', '2022-06-05 00:26:27', '2022-12-24 08:09:03'),
+(54, 'Joseph Morar V', 519, 'Omnis consectetur aliquid itaque reiciendis perspiciatis fugiat. Architecto dolorem perspiciatis minus voluptas velit. Voluptatibus quia ex earum.', '2022-05-11 08:25:57', '2022-12-24 08:09:03'),
+(55, 'Clyde Monahan', 123, 'Ea aut dolor autem reprehenderit distinctio. Est nobis officia officia autem quis tempore assumenda minima.', '2022-06-21 22:30:29', '2022-12-24 08:09:03'),
+(56, 'Barry O\'Keefe III', 773, 'Optio atque autem quasi. Animi expedita quia ut soluta aut. Voluptas labore rerum voluptatum quia. Et facere ex deserunt qui assumenda magni.', '2022-07-29 11:23:23', '2022-12-24 08:09:03'),
+(57, 'Guiseppe Donnelly', 810, 'Veniam expedita incidunt et et. Accusamus eaque cupiditate ab quia. Sunt voluptas officia et dolorum.', '2022-01-09 10:07:17', '2022-12-24 08:09:03'),
+(58, 'Elda Olson', 91, 'Delectus minus et provident. Laboriosam ab deleniti quas quasi quidem fugit. Autem nostrum dolorem voluptas. Ut non vel porro quia in nihil doloremque repudiandae.', '2022-04-19 04:58:13', '2022-12-24 08:09:03'),
+(59, 'Jed Rogahn I', 374, 'Cum aspernatur ab enim dolor. Sit quod laudantium aliquid dolorem quaerat eum totam. Consectetur quis distinctio laudantium voluptatem ex quia nihil blanditiis.', '2022-05-12 19:24:53', '2022-12-24 08:09:03'),
+(60, 'Prof. Makenzie Larkin III', 115, 'Voluptate est qui eos iste autem iste ratione. Nisi nisi accusamus fuga suscipit non. Occaecati magnam corporis velit fugit nam optio non. Ad sit et quas tenetur sit debitis ullam illo.', '2022-04-18 17:21:14', '2022-12-24 08:09:03'),
+(61, 'Prof. Tessie Oberbrunner', 968, 'Eos repudiandae dolore qui rerum. Voluptatibus nihil consequuntur laudantium. Reprehenderit repellendus quod consequatur distinctio soluta aliquid. Recusandae sequi consequatur repellat qui.', '2022-06-15 16:42:38', '2022-12-24 08:09:03'),
+(62, 'Jessika Walter', 956, 'Qui voluptatem quia exercitationem aperiam rerum. Et est incidunt corporis quod iusto ab ut. Iure similique sit perferendis iure aperiam. Pariatur possimus qui eveniet ab. Facere ea in illo voluptates voluptatibus repellat beatae itaque.', '2022-04-25 12:59:29', '2022-12-24 08:09:03'),
+(63, 'Mr. Guy Ebert Sr.', 754, 'Placeat quae consequuntur commodi nihil molestiae. Non expedita adipisci sequi quidem repellendus explicabo. Temporibus quas labore quidem ut sint laboriosam enim. Quos veniam deserunt ea accusantium maxime.', '2022-10-30 13:10:05', '2022-12-24 08:09:03'),
+(64, 'Osborne Tremblay', 763, 'Facilis odio ex molestiae rerum dolorum. Ut maxime rerum tempore. Odio facilis repellendus dicta eum aut et explicabo. Aut error aut minima mollitia.', '2022-03-06 21:55:02', '2022-12-24 08:09:03'),
+(65, 'Adele Mante', 954, 'Nemo quo nostrum ipsa expedita beatae dolorum et. Molestiae reiciendis reiciendis sint. Ad expedita omnis maiores dignissimos est quis placeat enim. Beatae impedit adipisci pariatur minima quos.', '2022-08-31 01:35:29', '2022-12-24 08:09:03'),
+(66, 'Eugenia Larkin', 5, 'Laboriosam distinctio nostrum voluptatem dignissimos expedita hic velit. Voluptates quae id deserunt architecto. Aut et qui rerum laboriosam deleniti nobis. Et et itaque et dolorum natus asperiores qui similique.', '2022-01-11 23:26:44', '2022-12-24 08:09:03'),
+(67, 'Prof. Justice Bahringer IV', 558, 'Et quod debitis enim fugiat itaque adipisci. Quia autem id reiciendis maiores et. Quisquam explicabo voluptatem nemo nobis. Officia distinctio velit vel et inventore.', '2022-07-03 11:06:38', '2022-12-25 01:11:25'),
+(68, 'Horace Grimes DVM', 139, 'Ipsam atque eveniet aperiam nesciunt ut. Voluptatem enim labore enim itaque dignissimos. Accusantium dolores cum sint exercitationem nihil ab. Fugiat unde pariatur soluta recusandae magnam sunt.', '2022-06-23 11:25:53', '2022-12-25 01:11:25'),
+(69, 'Sharon Weber', 412, 'Nostrum libero quibusdam fugiat et dolores. Et eos excepturi voluptatibus laudantium. Expedita numquam voluptatem fugit impedit ut non et officiis. Et magnam labore reprehenderit assumenda.', '2022-05-31 14:29:02', '2022-12-25 01:11:25'),
+(70, 'Richmond Beer', 901, 'Blanditiis dolor quis quis voluptatem dolore. Velit architecto a illo tempore vel nobis incidunt. Incidunt maiores molestias asperiores ullam. Animi vel inventore fugiat velit nam error inventore.', '2022-06-23 23:05:47', '2022-12-25 01:11:25'),
+(71, 'Wellington Trantow', 743, 'Voluptatum molestiae magnam sit provident quia. Sed ab aliquam aut neque impedit. Et tempora vero quia adipisci illum ea optio. Excepturi exercitationem inventore non sit consequatur molestiae illo.', '2022-08-28 13:46:26', '2022-12-25 01:11:25'),
+(72, 'Buddy Reichert', 319, 'Repudiandae itaque unde expedita. Est vitae quia voluptatum nostrum repudiandae ullam. Dolorem vero rerum voluptas facilis dolor non hic. Corporis perferendis vel molestias aut magni ipsa. Nihil aliquid odit in ducimus modi aperiam commodi.', '2022-10-24 00:39:37', '2022-12-25 01:11:25'),
+(73, 'Cristian Dickens', 148, 'Aliquid fugiat cupiditate necessitatibus a doloribus. Ut vitae dolorum dolorem ipsa perspiciatis totam. Voluptas eligendi est deserunt voluptatibus omnis ullam voluptas. Architecto officia est ad molestias.', '2022-10-21 16:55:30', '2022-12-25 01:11:25'),
+(74, 'Miss Gerda Kunze II', 222, 'Consequatur at quaerat sapiente modi. Odit molestias et similique aperiam.', '2022-04-25 23:31:54', '2022-12-25 01:11:25'),
+(75, 'Lura Ruecker', 5, 'Nulla velit sit vel non et. Ut unde quia qui eligendi.', '2022-11-01 06:47:08', '2022-12-25 01:11:25'),
+(76, 'Pansy Hartmann DVM', 869, 'Aperiam error enim iste fugiat labore illo alias. Dignissimos quaerat illum ea ad itaque fugit ipsam. Dolor et ea eveniet aut nisi sit tempora ipsa. Voluptas ipsam veritatis ut ipsa.', '2022-10-05 22:16:45', '2022-12-25 01:11:25'),
+(77, 'Kaela Morar', 550, 'Ut necessitatibus sapiente quis quae corrupti sed. Deserunt sunt nisi sint ipsa ipsum. Distinctio nostrum sit est omnis eos.', '2022-07-31 07:36:36', '2022-12-25 01:11:25'),
+(78, 'Prof. Xander Towne Jr.', 564, 'Cupiditate quibusdam perferendis esse laborum quas omnis unde tenetur. Aut saepe et porro odio.', '2022-11-23 12:16:54', '2022-12-25 01:11:25'),
+(79, 'Ted Cremin', 632, 'Perspiciatis provident quas quam et praesentium dicta. Voluptas distinctio repudiandae ex corrupti exercitationem. Neque consequatur quia occaecati quae iure rerum nesciunt. Ut a occaecati blanditiis ut perferendis.', '2022-10-26 05:34:25', '2022-12-25 01:11:25'),
+(80, 'Brooks Herzog', 577, 'Sequi et beatae et omnis facilis sunt. Est vero sit eos minima placeat delectus veniam maiores. Mollitia nulla sunt quis exercitationem qui et.', '2022-03-08 14:10:01', '2022-12-25 01:11:25'),
+(81, 'Jack Kshlerin', 30, 'Consequatur fugiat explicabo nulla et. Voluptate in magnam voluptas sint pariatur. Recusandae autem nihil velit perspiciatis rerum reprehenderit dicta. Inventore qui voluptatem ipsa iusto voluptatem qui.', '2022-05-08 02:43:04', '2022-12-25 01:11:25'),
+(82, 'Orland Huels', 461, 'Aut aperiam ullam illum a enim nostrum sit. Nobis magni ab voluptate excepturi autem. Ab eveniet voluptatem magni eius adipisci animi. Vitae delectus nemo dolore et voluptas aut labore. Consequatur incidunt veritatis expedita est eum.', '2022-04-20 15:19:22', '2022-12-25 01:11:25'),
+(83, 'Shayne Ratke', 166, 'Distinctio voluptas omnis quisquam recusandae possimus. Error magni voluptas nobis ut aut sed laudantium.', '2022-06-26 02:36:06', '2022-12-25 01:11:25'),
+(84, 'Dr. Elmer Marks DVM', 772, 'Neque maiores aperiam dolor esse. Aut doloribus dolorem tempore laudantium hic et. Et vitae magni distinctio. Perferendis maiores aut est quaerat.', '2022-04-08 00:50:02', '2022-12-25 01:11:25'),
+(85, 'Yessenia Armstrong', 139, 'Molestiae aut deserunt fugiat fugiat suscipit omnis et. Voluptatibus reprehenderit aut aperiam nobis. Magni qui laboriosam at ad quas ea. Praesentium dicta velit totam adipisci ipsa qui quis fugit.', '2022-10-20 13:32:04', '2022-12-25 01:11:25'),
+(86, 'Mrs. Lela Wyman IV', 706, 'Et voluptates omnis atque nostrum eum. Est et ad quia aliquid dolor et. Blanditiis est possimus facilis ut officiis.', '2022-08-09 12:35:39', '2022-12-25 01:11:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(6, '2014_10_12_000000_create_users_table', 1),
+(7, '2014_10_12_100000_create_password_resets_table', 1),
+(8, '2019_08_19_000000_create_failed_jobs_table', 1),
+(9, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(11, '2022_12_18_074604_create_patients_table', 2),
+(12, '2022_12_21_015410_create_tests_table', 3),
+(13, '2022_12_23_073016_create_drugs_table', 4),
+(15, '2022_12_24_134216_create_shops_table', 5),
+(16, '2022_12_25_033018_create_brands_table', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patients`
+--
+
+CREATE TABLE `patients` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` int(11) NOT NULL,
+  `email` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `patients`
+--
+
+INSERT INTO `patients` (`id`, `name`, `age`, `email`, `phone`, `address`, `created_at`, `updated_at`) VALUES
+(2, 'Admin', 20, 'mainadmin@gmail.com', '098763647', 'Yangon', '2022-12-19 09:46:01', NULL),
+(3, 'Min Htaw Lon', 25, 'minthitswe997@gmail.com', '09761305407', 'Hpa-An', NULL, NULL),
+(5, 'Jhon', 20, 'junnyolly@gmail.com', '09761305408', 'Yangon', NULL, NULL),
+(6, 'May ', 22, 'may1234@gmail.com', '0987878775', 'Hpa_An', '2022-12-20 01:28:13', NULL),
+(7, 'Aung ', 23, 'Aungaung@gmail.com', '09876543', 'Mandalay', '2022-12-19 01:29:00', NULL),
+(8, 'kyaw ', 25, 'kyawkyaw@gmail.com', '047487484', 'Hpa_An', '2022-12-20 01:51:07', NULL),
+(9, 'Merry', 26, 'merry@gmail.com', '097643234', 'Yangon', '2022-12-20 01:51:07', NULL),
+(10, 'Herry', 20, 'herry123@gail.com', '09761305407', 'Mandalay', '2022-12-23 17:30:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shops`
+--
+
+CREATE TABLE `shops` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `brand` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `shops`
+--
+
+INSERT INTO `shops` (`id`, `brand`, `product`, `payment`, `address`, `created_at`, `updated_at`) VALUES
+(2, 'Bechtelar, Kozey and Wilderman', 'shanahan.com', 'Visa', 'Macedonia', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(3, 'Tokyo,Japan', 'larson.com', 'MasterCard', 'Niue', '2022-12-24 17:30:00', '2022-12-24 08:09:03'),
+(4, 'Rolfson-Konopelski', 'deckow.info', 'Visa Retired', 'Jordan', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(5, 'Frami PLC', 'considine.com', 'MasterCard', 'Venezuela', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(7, 'Hane PLC', 'heaney.biz', 'JCB', 'Cayman Islands', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(8, 'Grimes-Wiza', 'herzog.com', 'MasterCard', 'Guinea-Bissau', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(9, 'Swaniawski-Leffler', 'hane.org', 'MasterCard', 'Hong Kong', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(10, 'Jacobs-Schaefer', 'pollich.com', 'American Express', 'Israel', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(11, 'Shanahan, Schulist and Ritchie', 'denesik.org', 'MasterCard', 'Yemen', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(12, 'Hamill, Schmidt and Wehner', 'shanahan.net', 'MasterCard', 'Antigua and Barbuda', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(13, 'Terry, Hansen and Haley', 'auer.com', 'MasterCard', 'Tajikistan', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(14, 'Casper, Zemlak and Nienow', 'treutel.biz', 'Visa Retired', 'Estonia', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(15, 'Dicki Inc', 'ankunding.info', 'MasterCard', 'Malta', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(16, 'Buckridge, Wintheiser and Yundt', 'lynch.com', 'Visa', 'Saint Martin', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(17, 'Kuhic, Heathcote and Schamberger', 'kutch.com', 'Visa', 'Bangladesh', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(18, 'Huel-Larkin', 'jerde.com', 'Discover Card', 'Tokelau', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(19, 'Dicki and Sons', 'white.net', 'MasterCard', 'Botswana', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(20, 'Walker LLC', 'nienow.com', 'Visa Retired', 'Turks and Caicos Islands', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(21, 'One stock', 'kitchen products', '2C2P', 'Yangon', NULL, NULL),
+(22, 'Medhurst-Muller', 'johns.biz', 'Visa', 'Tuvalu', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(23, 'Hahn LLC', 'ferry.com', 'JCB', 'Switzerland', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(24, 'Fritsch Inc', 'flatley.com', 'MasterCard', 'Malaysia', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(25, 'Kulas-Sporer', 'ankunding.net', 'American Express', 'United Kingdom', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(26, 'Dooley-Bruen', 'thompson.info', 'MasterCard', 'Saint Kitts and Nevis', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(27, 'Marquardt, VonRueden and Pagac', 'stehr.com', 'MasterCard', 'Turks and Caicos Islands', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(28, 'Goodwin, Gerhold and Runte', 'klein.info', 'Visa', 'Lao People\'s Democratic Republic', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(29, 'Heller Inc', 'kovacek.com', 'Visa', 'Bulgaria', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(30, 'Stehr and Sons', 'olson.net', 'MasterCard', 'Cyprus', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(31, 'Jacobi-Douglas', 'mohr.com', 'Visa', 'Monaco', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(32, 'Olson and Sons', 'jaskolski.com', 'MasterCard', 'Mongolia', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(33, 'Stracke-D\'Amore', 'corkery.com', 'American Express', 'Turkmenistan', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(34, 'Schiller Ltd', 'brekke.com', 'MasterCard', 'Bermuda', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(35, 'Kshlerin PLC', 'jacobs.com', 'Visa', 'Belize', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(36, 'McGlynn LLC', 'hudson.info', 'MasterCard', 'Myanmar', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(37, 'Kreiger Ltd', 'rowe.info', 'MasterCard', 'Lao People\'s Democratic Republic', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(38, 'Hirthe-Klein', 'gibson.com', 'MasterCard', 'Mayotte', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(39, 'Walsh Group', 'douglas.biz', 'MasterCard', 'Uganda', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(40, 'Hansen-Abbott', 'kohler.com', 'Visa', 'United Kingdom', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(41, 'Robel-Pfannerstill', 'stiedemann.com', 'MasterCard', 'Kenya', '2022-12-25 01:11:25', '2022-12-25 01:11:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tests`
+--
+
+CREATE TABLE `tests` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `email` varchar(125) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tests`
+--
+
+INSERT INTO `tests` (`id`, `username`, `age`, `email`, `address`, `created_at`, `updated_at`) VALUES
+(1, 'Honny', 27, 'vdibbert@example.net', '1422 Pollich Station\r\nNew Corymouth, AZ 91325', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(2, 'Arana', 64, 'samson.mclaughlin@example.com', '467 Hahn Mills Suite 598\r\nMargarethaven, MO 92848-8756', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(3, 'Mr. Brannon Wolff', 28, 'bethel.kreiger@example.com', '2773 Marianne Island Suite 690\nShauntown, OR 33482', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(4, 'Kareem Mertz', 33, 'borer.onie@example.net', '2181 Greenfelder Centers\nEmmerichbury, CT 34446', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(6, 'Petra Pan', 22, 'marques.harber@example.com', '6980 Boehm Rapid\r\nErnieburgh, OR 62935', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(7, 'Jazlyn Swaniawski', 41, 'vkshlerin@example.com', '861 Labadie Dale Apt. 446\nLillyport, FL 01272', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(8, 'Rachelle Gerlach I', 45, 'keyon23@example.net', '9594 Britney Trail\nNorth Jolieville, RI 86938', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(9, 'Hilario Turner', 10, 'elsa12@example.org', '836 Gorczany Rue Suite 933\nWymanburgh, NH 23032-0334', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(10, 'Mrs. Araceli Kunze DVM', 38, 'kziemann@example.net', '92147 Boehm Turnpike\nLinneaport, MI 50453-6862', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(11, 'Mr. Stan Dickens', 51, 'tkihn@example.net', '69328 Robin Square Apt. 297\nEast Alanisstad, CA 35352', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(12, 'Reyes Weber', 62, 'soledad69@example.com', '3568 Harber Port Suite 523\nGulgowskistad, MN 95580-9725', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(13, 'Annette Pfannerstill', 33, 'selina.block@example.org', '57408 Schimmel Turnpike Suite 139\nOlgaville, KY 54827-8599', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(14, 'Prof. Horace Sipes Sr.', 41, 'sonya36@example.net', '1239 Hand Brooks\nJoycefort, VT 54550-9197', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(15, 'Estelle Conroy', 82, 'adams.eulalia@example.org', '249 Stamm Shores Suite 978\nNew Diego, KY 40822-9852', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(16, 'Drake Anderson', 36, 'ublanda@example.net', '632 Thiel Coves Suite 012\nWest Lillieburgh, LA 43819', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(17, 'Morris Effertz I', 35, 'qwuckert@example.net', '672 Esmeralda Island Apt. 383\nBayleebury, NY 12758', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(18, 'Iva Turner V', 28, 'jones.jody@example.org', '289 Shanna Knolls\nEmmanuelview, KS 90663-6738', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(19, 'Iliana Gibson I', 81, 'joany.rolfson@example.net', '589 Cathrine Islands Suite 255\nJoaniemouth, IA 75566-3994', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(20, 'Addie Rempel', 5, 'dane21@example.net', '53548 Pollich Place\nShanahanchester, MD 63692-4224', '2022-12-20 19:53:10', '2022-12-20 19:53:10'),
+(21, 'Min Htaw Lon', 25, 'minhtawlon111@gmail.com', 'Hpa_An', NULL, NULL),
+(24, 'Jhon', 20, 'junnyolly@gmail.com', 'Yangon', '2022-12-21 17:30:00', NULL),
+(25, 'Jhon', 20, 'junnyolly@gmail.com', 'Yangon', '2022-12-21 17:30:00', NULL),
+(26, 'Merry', 20, 'merry@gmail.com', 'Landon', '2022-12-22 17:30:00', NULL),
+(27, 'Lou Quitzon IV', 24, 'loraine.christiansen@example.com', '669 Gleichner Drive Apt. 499\nMaybelleburgh, AK 85508', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(28, 'Emmy Tromp', 16, 'kris.dayne@example.org', '5465 Koelpin Islands Suite 734\nDellabury, NC 78515-1829', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(29, 'Mrs. Bernice Hudson', 41, 'bahringer.vicente@example.com', '7592 Fahey Causeway Suite 881\nNorth Paris, RI 17067-4378', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(30, 'Jerrod Lakin', 68, 'areilly@example.com', '32161 Hill Rest\nNorth Danaberg, TN 43572-0822', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(31, 'Rosalind Kessler I', 35, 'samir.ullrich@example.org', '696 Heidenreich Neck Suite 386\nWest Mallory, ID 61169', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(32, 'Benedict Murray', 16, 'herta71@example.org', '78717 Gottlieb Via\nWest Chelsey, VT 21345-5333', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(33, 'Mr. Blair Fadel', 89, 'pmuller@example.org', '638 Thelma Plains\nKlingshire, NJ 98259', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(34, 'Terence Adams', 16, 'emanuel02@example.net', '44524 Eliseo Crest\nJohnshaven, OK 05446-5061', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(35, 'Sydnee Tremblay', 85, 'alaina59@example.org', '159 Junior Square\nWest Anabel, GA 77136', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(36, 'Guy Gutmann', 2, 'eabernathy@example.net', '6354 Eldred Meadows Apt. 137\nEast Tre, MI 88514', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(37, 'Mr. Olaf Ortiz MD', 22, 'annette.hintz@example.com', '703 Efren Light\nLake Devantetown, WI 07337', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(38, 'Cooper Mann', 11, 'jberge@example.com', '1233 Hintz Fall Apt. 680\nNew Carachester, HI 47453-5120', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(39, 'Adriel Rogahn', 96, 'dock59@example.org', '335 Luettgen Fields\nPort Elvis, AR 64072', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(40, 'Ms. Nellie Skiles V', 20, 'cbahringer@example.com', '66635 Corwin Port\nDooleystad, OH 03247', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(41, 'Prof. Harley Orn Sr.', 91, 'linnea.schimmel@example.org', '84014 Tad Knolls\nLake Santa, NE 12831', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(42, 'Kiarra Rosenbaum', 44, 'kariane52@example.org', '805 Fisher Flats Suite 587\nMrazport, TN 42005', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(43, 'Anabel Beahan DVM', 76, 'maye.rice@example.net', '4195 Fausto Row Apt. 084\nWest Dasia, SD 55817-3374', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(44, 'Annamae Hauck', 45, 'crona.eliza@example.org', '19811 Novella Turnpike Apt. 821\nNew Aubreymouth, NJ 88996', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(45, 'Ms. Gerry Beahan DVM', 31, 'donna42@example.com', '6404 Bartholome Fall Apt. 993\nNew Thoraton, SD 78722-5405', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(46, 'Elna Deckow', 63, 'akoelpin@example.com', '551 Batz Lake Apt. 215\nLake Deon, SC 64280-3517', '2022-12-23 03:05:30', '2022-12-23 03:05:30'),
+(47, 'Jessie Barrows', 47, 'douglas05@example.org', '7677 Gorczany Lake\nPort Chelsiemouth, SD 48956-7366', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(48, 'Dr. Cindy Weissnat II', 23, 'fadel.abigail@example.org', '9561 Lubowitz Street\nLlewellynstad, TN 70644', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(49, 'Naomi Hackett', 33, 'okling@example.net', '255 Beverly Walk\nKelliport, SD 02859-4489', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(50, 'Soledad Zieme', 67, 'rodrick57@example.com', '99504 Greenholt Avenue Apt. 936\nWest Earnestineton, MI 94390', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(51, 'Alan Pollich PhD', 91, 'carolina00@example.org', '5644 Talia Dale\nNew Adrain, GA 06378-9664', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(52, 'Bennett Carroll', 7, 'fgutkowski@example.com', '1502 Mona Rapids\nNew Janside, MA 21202', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(53, 'Einar Raynor', 12, 'halvorson.kadin@example.org', '719 Rice Harbors\nJacobsville, LA 84467-2573', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(54, 'Heaven Rath', 7, 'alessia.rice@example.net', '6273 Bethany Keys Apt. 474\nNolanland, WV 67857', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(55, 'Cody Jacobi', 78, 'marlon.schowalter@example.org', '6261 Lavern Green\nAbshirefort, IL 38713-1388', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(56, 'Mr. Junior Braun', 72, 'bboyer@example.com', '7366 Powlowski Keys\nNew Zoey, AL 73042-1449', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(57, 'Ms. Maya Hagenes', 83, 'loconnell@example.org', '2953 Maybell Shoal Apt. 947\nSouth Sarai, MD 97164', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(58, 'Dr. Juwan Stracke MD', 54, 'lavina.thiel@example.org', '939 Stephan Wall\nWest Kenyattamouth, MN 13015', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(59, 'Prof. Fanny Shields', 2, 'stracke.jillian@example.net', '29555 Darian Springs\nNew Marinachester, KY 37236', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(60, 'Sam Haley', 10, 'gdicki@example.com', '691 Asa Summit Suite 320\nKassulkehaven, PA 73461', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(61, 'Rosie Schowalter', 34, 'tstamm@example.org', '10124 Marta Courts\nNew Susanamouth, CO 30058', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(62, 'Hilton Haley', 39, 'jerald94@example.net', '85246 Johan Radial Suite 809\nLucieberg, WY 29321', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(63, 'Donato Dicki', 99, 'yrodriguez@example.net', '5532 Fay Hills\nAltenwerthberg, NY 97418-1790', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(64, 'Lacy Monahan III', 13, 'kamron09@example.com', '87106 Natalie Terrace\nEast Jasen, MO 99922-1641', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(65, 'Diana Volkman', 84, 'crooks.benedict@example.com', '12681 Eloisa Viaduct Apt. 857\nKhalidhaven, PA 77009', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(66, 'Mr. Vidal Grady', 48, 'frida62@example.net', '328 Cormier Pine Apt. 890\nLangworthtown, MD 93773', '2022-12-23 03:08:21', '2022-12-23 03:08:21'),
+(67, 'Prof. Delilah Will', 56, 'willie.watsica@example.net', '7815 Bechtelar Grove\nJaskolskiberg, FL 69216-4278', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(68, 'Adan Blick', 80, 'howe.quinton@example.net', '923 Natalie Skyway Suite 611\nPort Fredhaven, NM 72199', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(69, 'Miss Francesca Gibson MD', 35, 'zachary10@example.net', '120 Schiller Center\nVicentaton, HI 81379-9950', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(70, 'Walter Veum MD', 74, 'hermina32@example.org', '6885 Ortiz Fall\nMajorshire, AZ 94020-3722', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(71, 'Odell Anderson', 3, 'qrau@example.org', '42134 Bahringer Stravenue Apt. 531\nEast Tre, SD 05337', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(72, 'Tyrell Bernier', 61, 'magdalen.ryan@example.com', '453 Okuneva Garden\nWest Rosalindborough, MN 12173-3450', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(73, 'Maude Hamill', 1, 'melvin66@example.com', '10190 Kirlin Coves Suite 209\nSylvanview, GA 12872-0636', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(74, 'Rowena Schmitt', 16, 'lincoln30@example.org', '3188 Hessel Branch\nEast Verdieview, PA 67209', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(75, 'Carmen Legros', 89, 'cory12@example.org', '51616 Chester Roads Apt. 083\nKiehnborough, ID 24156', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(76, 'Frida Greenfelder II', 87, 'josue83@example.net', '771 Hirthe Circle Suite 463\nNew Deshawn, SC 59961-6047', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(77, 'Tracey Pfeffer', 64, 'ikertzmann@example.com', '1039 Stanton Valley Apt. 236\nEast Deannaside, NJ 40739', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(78, 'Ms. Adelle Conn', 96, 'tia.gerlach@example.com', '576 Walsh Ridge Suite 891\nNorth Ashtyn, VT 91058', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(79, 'Prof. Benton Heaney Jr.', 67, 'rossie47@example.org', '2671 Doyle Lakes Apt. 563\nEast Jovanberg, NV 57013', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(80, 'Carroll Hamill PhD', 51, 'kuphal.lilian@example.com', '2366 Arlo Island\nWest Delphiaport, VA 46097', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(81, 'Tabitha Schumm DDS', 78, 'vadams@example.com', '28197 Jaunita Isle\nWest Dewaynemouth, NM 48388-0400', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(82, 'Prof. Stone Corkery', 50, 'sincere.runte@example.net', '797 Hyatt Cliff Suite 671\nPort Kenya, HI 71117', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(83, 'Mr. Trever Frami', 17, 'xschmeler@example.org', '9106 Teagan Plains\nEast Jarodchester, GA 60127-5725', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(84, 'Bart Cassin', 87, 'akozey@example.org', '861 Marty Terrace Apt. 428\nRudyborough, NC 41175-4251', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(85, 'Prof. Cleora Mayer III', 87, 'bborer@example.net', '823 Marks Center Apt. 704\nRessieborough, OK 53720-5119', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(86, 'Marietta Lakin', 23, 'dortha93@example.com', '351 Spinka Port\nHoppemouth, KS 28276', '2022-12-23 03:18:57', '2022-12-23 03:18:57'),
+(87, 'Camren Ledner', 2, 'kenya.hill@example.com', '2966 Price Mountain\nRowanfort, CT 66776-2124', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(88, 'Trey O\'Connell', 97, 'kenna.mante@example.net', '7708 Bernhard Locks Apt. 265\nGutmannmouth, MA 24743-1132', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(89, 'Timmy Pfeffer', 25, 'luther78@example.org', '511 Maxie Pass Apt. 935\nSouth Jordyn, NY 08492', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(90, 'Margaretta Rohan', 15, 'tianna.wisozk@example.org', '6094 Senger Wells Apt. 611\nKuhnport, MI 91293-0262', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(91, 'Claudie Kuhn PhD', 12, 'skyla01@example.org', '1476 Russel Drive Apt. 887\nWatsicaview, AK 08584-9495', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(92, 'Fatima Hermann I', 9, 'hkoch@example.net', '54821 Dicki Unions Suite 278\nNew Demario, FL 98036-7745', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(93, 'Dr. Loyce Connelly V', 90, 'pauline60@example.net', '6868 Stanton Circle\nNew Herbert, ME 48831', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(94, 'Jany Bechtelar', 12, 'kdietrich@example.org', '25004 Torp Stream Apt. 364\nPort Hertha, OR 04722', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(95, 'Prof. Cristopher Gaylord III', 22, 'dallas33@example.net', '628 Luettgen Glens\nWest Lydialand, LA 25423-0926', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(96, 'Ms. Desiree Turcotte', 70, 'raegan76@example.org', '667 Lenore Wall\nEast Lacy, NC 15693', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(97, 'Dr. Della Dibbert', 87, 'rahsaan.runolfsson@example.org', '9877 Blanda Ridge Apt. 859\nNew Kodyfort, WV 52048-7838', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(98, 'Margaret Hegmann MD', 29, 'reilly29@example.net', '9963 Lincoln Land\nNew London, NM 26371-6729', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(99, 'Ruthe Homenick', 30, 'josefina.rodriguez@example.net', '5115 Lang Locks Suite 360\nPort Alexandermouth, DE 57772', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(100, 'Novella Corkery DDS', 56, 'carolanne.hansen@example.com', '4785 Dale Crescent Suite 086\nSouth Adrianaborough, FL 32383-4756', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(101, 'Prof. Aida Hettinger MD', 98, 'thansen@example.com', '7745 Kessler Parkway\nWest Nathanialchester, OK 43946-7390', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(102, 'Mr. Robb Gislason', 10, 'goldner.brendan@example.com', '82280 Maeve Brooks\nRaynortown, CT 20878', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(103, 'Nigel Christiansen', 8, 'lkutch@example.com', '83721 Ray Plaza Suite 389\nKubside, AR 52828-5300', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(104, 'Anissa Leffler V', 58, 'wuckert.unique@example.com', '4340 Haskell Terrace\nKlockotown, MA 30182-7372', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(105, 'Kathryn Moen', 86, 'haley.marielle@example.com', '390 Dach Court Suite 978\nD\'Amoreburgh, HI 49059-9923', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(106, 'Dr. Elliot Ferry', 22, 'edmond.thiel@example.net', '82026 Levi Shoal Apt. 977\nNicolasfort, LA 89995-0336', '2022-12-24 08:08:23', '2022-12-24 08:08:23'),
+(107, 'Frank Little', 91, 'joanny51@example.org', '5816 Kuhlman Orchard\nSalvatoremouth, WV 77198', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(108, 'Rickey Price I', 17, 'aron.bergnaum@example.org', '627 Koss Rapid Apt. 216\nKuphalstad, NV 99929', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(109, 'Lottie Beatty', 62, 'andres26@example.net', '998 Greyson Courts Apt. 698\nElizabethfort, ME 44599-1079', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(110, 'Lafayette Marvin', 27, 'boehm.jonathon@example.net', '58190 Labadie Knolls\nRosettaburgh, OH 49627', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(111, 'Mr. Gunner Stiedemann I', 26, 'demario68@example.org', '115 Volkman Summit Suite 373\nWest Myrticeview, DE 30954-9296', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(112, 'Rolando Feil', 82, 'tpowlowski@example.net', '88066 Kunde Causeway Apt. 853\nHarrisburgh, MD 42258', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(113, 'Margot Keeling', 25, 'alexander.osinski@example.com', '94211 Braun Way Apt. 221\nSouth Kyraland, WV 55537', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(114, 'Michaela Will', 23, 'clementine.kessler@example.net', '2560 Wiza Spur\nDeckowhaven, HI 54011', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(115, 'Werner Hayes', 57, 'lynch.damien@example.org', '81281 Frederique Mission\nMadelinefurt, RI 54439-8073', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(116, 'Franz Kozey', 8, 'rrolfson@example.org', '691 Walter Tunnel\nLehnerport, GA 80819-1157', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(117, 'Mr. Beau Jacobs PhD', 10, 'kuhic.hubert@example.com', '6680 Gleason Ford Apt. 442\nNew Beverlyport, OH 12414-4170', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(118, 'Calista Nikolaus', 36, 'beier.felipe@example.org', '312 Satterfield Passage Suite 766\nNew Ignatiuston, MD 99869', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(119, 'Prof. Clemmie Nader', 59, 'aufderhar.gwendolyn@example.net', '84763 Tiana Locks Suite 103\nKamronmouth, SC 31483-5781', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(120, 'Katrina Ullrich', 72, 'frederik30@example.net', '7825 Granville Park\nTabithatown, WY 70497', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(121, 'Gabrielle Gusikowski', 21, 'jeanne37@example.org', '40987 Wisozk Mountains Apt. 671\nStanfordhaven, OK 44306-4936', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(122, 'Dr. Drew O\'Hara', 26, 'loraine.heller@example.net', '7954 Gusikowski Greens Suite 240\nSouth Bobbieside, KS 72828', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(123, 'Ted Wunsch', 92, 'luz34@example.org', '92846 Lucienne Avenue\nPort Jaydon, VT 32004-4106', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(124, 'Rosario Kihn V', 21, 'alisha07@example.com', '5251 Omari Squares\nQuigleyborough, NM 44768', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(125, 'Lora Mraz', 92, 'harvey.allison@example.org', '12133 Heathcote Extensions\nAdamsfort, IN 56935', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(126, 'Enid Rodriguez', 19, 'herzog.arlene@example.net', '11753 Runte Avenue\nMillschester, MT 77152', '2022-12-24 08:09:03', '2022-12-24 08:09:03'),
+(127, 'Coty Funk DDS', 71, 'raoul53@example.org', '43677 Koch Corners Apt. 744\nLake Skylar, AL 54652-6045', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(128, 'Maegan Hills', 28, 'levi.ratke@example.org', '527 Bethel Haven Suite 503\nLake Fernview, NY 57573-6119', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(129, 'Mrs. Bethel Spencer DDS', 83, 'lucie23@example.org', '723 Scottie Via Apt. 379\nJamisonborough, NV 63651', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(130, 'Anderson Rutherford', 35, 'michelle99@example.org', '311 Alta Field Apt. 229\nLake Jarret, LA 67042-4836', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(131, 'Mr. Howard Bogan', 59, 'lue.auer@example.com', '803 Kuhic Mission Apt. 042\nIssachaven, WI 46708-1655', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(132, 'Jordi Sawayn', 10, 'ulesch@example.org', '19175 Bergstrom Island\nLake Lessie, WV 47773', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(133, 'Alana Becker', 9, 'steuber.evangeline@example.net', '644 Beahan Brooks Apt. 448\nSouth Kenneth, NJ 31065', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(134, 'Prof. Brennon Wilkinson DDS', 54, 'pjerde@example.net', '226 Carli Vista\nNorth Eulaliaport, MT 46699-5837', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(135, 'Louisa Rau', 1, 'boyle.howell@example.com', '5386 Judah Walk Suite 883\nAgustinport, FL 19424', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(136, 'Charity Tromp', 45, 'emonahan@example.net', '6755 Muller Groves\nLake Bailey, OR 52089-9750', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(137, 'Bridie Zemlak', 95, 'johnson.quinn@example.org', '736 Garth Shore Suite 154\nAronfort, TN 51465-7764', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(138, 'Ms. Kasey Luettgen Sr.', 55, 'rodriguez.nadia@example.net', '130 Don Mission Apt. 654\nSandraview, ID 07651-3767', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(139, 'Desiree Vandervort', 47, 'leora72@example.net', '995 Trever Station\nCarolynechester, SD 38735-0719', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(140, 'Darrel Price', 65, 'cassidy.white@example.org', '740 Rath Walk Suite 922\nChamplinhaven, MA 26473-2546', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(141, 'Ewald Mayer', 20, 'dlind@example.org', '367 Jo Cliff Apt. 100\nEast Creolahaven, ID 70095', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(142, 'Oswaldo White', 31, 'nolan.lawson@example.net', '34271 Labadie Junction Apt. 248\nEast Rocky, CO 00940', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(143, 'Etha Lehner', 66, 'dickens.cleora@example.net', '3342 Edison Views Suite 847\nSouth Jakobfort, NE 65429-6789', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(144, 'Maribel Sauer', 78, 'robbie82@example.org', '484 Mandy Ferry\nWest Ansel, WA 21226', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(145, 'Jacquelyn Reichert', 41, 'thea81@example.org', '71250 McKenzie Fords\nNew Tia, AZ 61308-9421', '2022-12-25 01:11:25', '2022-12-25 01:11:25'),
+(146, 'Vida Kulas', 65, 'kyler.maggio@example.org', '7148 Wiza Street\nJanetstad, SD 88041', '2022-12-25 01:11:25', '2022-12-25 01:11:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `brands`
+--
+ALTER TABLE `brands`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `drugs`
+--
+ALTER TABLE `drugs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `patients`
+--
+ALTER TABLE `patients`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `shops`
+--
+ALTER TABLE `shops`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tests`
+--
+ALTER TABLE `tests`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `drugs`
+--
+ALTER TABLE `drugs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `patients`
+--
+ALTER TABLE `patients`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `shops`
+--
+ALTER TABLE `shops`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `tests`
+--
+ALTER TABLE `tests`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
